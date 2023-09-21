@@ -1,24 +1,45 @@
 {
   "name": "node-fetch-cookie-native",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "types": "./index.d.ts",
   "module": "./dist/node.js",
   "exports": {
     ".": {
-      "browser": "./dist/browser.js",
-      "node": {
-        "import": "./dist/node.js",
-        "types": "./index.d.ts"
+      "browser": {
+        "import": {
+          "types": "./index.d.ts",
+          "default": "./dist/browser.js"
+        },
+        "require": {
+          "types": "./index.d.cts",
+          "default": "./dist/browser.js"
+        }
       },
-      "types": "./index.d.ts",
-      "import": "./dist/node.js",
-      "default": "./dist/node.js"
+      "node": {
+        "import": {
+          "types": "./index.d.ts",
+          "default": "./dist/node.js"
+        },
+        "require": {
+          "types": "./index.d.cts",
+          "default": "./dist/node.cjs"
+        }
+      },
+      "import": {
+        "types": "./index.d.ts",
+        "default": "./dist/node.js"
+      },
+      "require": {
+        "types": "./index.d.cts",
+        "default": "./dist/node.cjs"
+      }
     }
   },
   "files": [
     "dist",
-    "index.d.ts"
+    "index.d.ts",
+    "index.d.cts"
   ],
   "scripts": {
     "build": "tsup"
@@ -28,7 +49,7 @@
     "node-fetch-native": "*"
   },
   "devDependencies": {
-    "@types/tough-cookie": "^4.0.2",
+    "@types/tough-cookie": "^4.0.3",
     "tsup": "^7.2.0"
   }
 }
