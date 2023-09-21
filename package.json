@@ -1,8 +1,12 @@
 {
   "name": "node-fetch-cookie-native",
   "version": "0.0.2",
+  "description": "A wrapper around node-fetch-native and fetch-cookie",
+  "repository": "AsakuraMizu/node-fetch-cookie-native",
+  "license": "MIT",
   "type": "module",
   "types": "./index.d.ts",
+  "main": "./dist/node.cjs",
   "module": "./dist/node.js",
   "exports": {
     ".": {
